@@ -5,7 +5,10 @@ const { resolvers } = require('./server/resolvers');
 
 const lambda = new GraphQLServerLambda({
   typeDefs,
-  resolvers
+  resolvers,
+  context: {
+    prisma
+  }
 });
 
 exports.server = lambda.graphqlHandler;

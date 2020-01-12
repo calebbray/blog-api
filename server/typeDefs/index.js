@@ -1,5 +1,13 @@
 module.exports.typeDefs = `
   type Query {
-    hello(name: String): String
+    posts(query: String): [Post!]!
+    post(id: String!): Post!
+  }
+
+  type Post {
+    id: String!
+    title: String!
+    body: String
+    published: Boolean!
   }
 `;

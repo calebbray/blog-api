@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "get-schema": "graphql get-schema -p",
-    "start": "nodemon -e 'yml js' --exec sls offline start",
+    "start": "trap 'docker-compose down; exit 0' INT; docker-compose up --build & nodemon -e 'yml js' --exec sls offline start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

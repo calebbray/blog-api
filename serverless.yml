@@ -8,14 +8,14 @@ provider:
 
 functions:
   graphql:
-    handler: handlers.server
+    handler: graphqlLambda.server
     events:
       - http:
           method: post
           path: graphql
           cors: true
   playground:
-    handler: handlers.playground
+    handler: graphqlLambda.playground
     events:
       - http:
           method: get
