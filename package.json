@@ -1,0 +1,24 @@
+{
+  "name": "graphql-blog-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "get-schema": "graphql get-schema -p",
+    "start": "nodemon -e 'yml js' --exec sls offline start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "graphql-cli": "^3.0.14",
+    "nodemon": "^2.0.2",
+    "serverless": "^1.60.5",
+    "serverless-offline": "^5.12.1"
+  },
+  "dependencies": {
+    "graphql-yoga": "^1.18.3",
+    "prisma-binding": "^2.3.16"
+  }
+}
