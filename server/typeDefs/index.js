@@ -30,6 +30,6 @@ module.exports.typeDefs = `
   input UpdatePostInput {
     title: String
     body: String
-    published: String
+    published: Boolean
   }
 `;
