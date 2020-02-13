@@ -11,7 +11,7 @@ You can find the configuration for `prisma` in the appropriate directory which c
 
 `datamodel.prisma` is the outline for all of our types. Once we specify our types we can deploy our prisma service and generate a new schema (we'll get there below).
 
-### Steps add or edit Types in the GraphQL API
+### Steps to add or edit Types in the GraphQL API
 
 - Add a type to `datamodel.prisma`. The most basic types will only have scalar options (String, Boolean, Int, Float...). We can also add types that have relations to each other. So if we had a `Users` type and a `Posts` type, A user might have a `posts` attribute that references an array of `Posts`.
 - Now that we have updated our datamodel, we need to deploy it to prisma. We need to make sure that our Docker container is running as wellso prisma can find the correct endpoint.
