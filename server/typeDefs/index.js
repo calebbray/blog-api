@@ -2,11 +2,13 @@ module.exports.typeDefs = `
   type Query {
     posts(query: String): [Post!]!
     post(id: String!): Post!
+    skills(query: String): [Skill!]!
+    skill(id: String!): Skill!
   }
 
   type Mutation {
-    createPost(data: CreatePostInput): Post!
-    updatePost(id: String!, data: UpdatePostInput): Post!
+    createPost(data: CreatePostInput!): Post!
+    updatePost(id: String!, data: UpdatePostInput!): Post!
     deletePost(id: String!): Message!
   }
 
@@ -15,6 +17,22 @@ module.exports.typeDefs = `
     title: String!
     body: String
     published: Boolean!
+    tags: [Tag!]
+  }
+
+  type Tag {
+    id: String!
+    tagName: String!
+    posts: [Post!]!
+  }
+
+  type Skill {
+    id: String!
+    name: String!
+    rating: Float!
+    description: String!
+    iconLink: String!
+    links: [String!]!
   }
 
   type Message {
@@ -30,6 +48,6 @@ module.exports.typeDefs = `
   input UpdatePostInput {
     title: String
     body: String
-    published: String
+    published: Boolean
   }
 `;

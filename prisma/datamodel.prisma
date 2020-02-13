@@ -3,4 +3,19 @@ type Post {
   title: String!
   body: String!
   published: Boolean! @default(value: false)
+  tags: [Tag!] @relation(link: INLINE)
+}
+
+type Tag {
+  id: ID! @id
+  tagName: String!
+  posts: [Post!]!
+}
+
+type Skill {
+  id: ID! @id
+  name: String!
+  rating: Int!
+  description: String!
+  links: [String!]!
 }
